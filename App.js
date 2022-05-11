@@ -15,9 +15,13 @@ import {
 
 import CustomCounter from "./component/Counter"
 
+import TabBottomApp from "./component/TabBottom/App"
+
 const App = ()=> {
  return (
-   <CustomCounter/>
+  
+
+  <TabBottomApp/>
  )
 
 };

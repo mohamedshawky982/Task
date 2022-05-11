@@ -37,29 +37,30 @@ class CustomCounter extends React.Component {
       minutes = hours.substring(hours.indexOf('.')); /// .5
 
       minutes = minutes * 60;
-
-      
     }
 
     this.setState({hours: realHoursNumber, minutes});
 
-    setInterval(() => {
-    
+  
 
-      this.setState({seconds: this.state.seconds - 1});
 
-      if (
-        this.state.hours == 0 &&
-        this.state.minutes == 0 &&
-        this.state.seconds-1 == 0
-      ) {
-        return;
-      }
+var I=  setInterval(() => {
+    this.setState({seconds: this.state.seconds - 1});
 
-      if (this.state.seconds - 1 == 0) {
-        this.setState({minutes: this.state.minutes - 1, seconds: 59});
-      }
-    }, 1000);
+    if (
+      this.state.hours == 0 &&
+      this.state.minutes == 0 &&
+      this.state.seconds - 1 == 0
+    ) {
+      return;
+    }
+
+    if (this.state.seconds - 1 == 0) {
+      this.setState({minutes: this.state.minutes - 1, seconds: 59});
+    }
+  }, 1000);
+
+
   };
 
   render() {
